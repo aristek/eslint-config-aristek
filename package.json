@@ -1,0 +1,54 @@
+{
+  "name": "eslint-config-aristek",
+  "version": "1.0.0",
+  "description": "ESLint config based on team guideline and experience.",
+  "repository": "https://github.com/aristek/eslint-config-aristek",
+  "license": "MIT",
+  "main": "index.js",
+  "files": [
+    "index.js"
+  ],
+  "peerDependencies": {
+    "eslint": "~6.6.0",
+    "eslint-config-airbnb": "~18.0.1",
+    "eslint-config-prettier": "~6.6.0",
+    "eslint-plugin-import": "~2.20.0",
+    "eslint-plugin-jsx-a11y": "~6.2.3",
+    "eslint-plugin-only-warn": "~1.0.2",
+    "eslint-plugin-react": "~7.18.3",
+    "eslint-plugin-react-hooks": "~1.7.0"
+  },
+  "optionalDependencies": {
+    "@typescript-eslint/eslint-plugin": "2.10.0",
+    "@typescript-eslint/parser": "2.10.0"
+  },
+  "dependencies": {
+    "babel-eslint": "10.0.3"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "8.3.5",
+    "@commitlint/config-conventional": "8.3.4",
+    "husky": "4.2.1",
+    "lint-staged": "10.0.4",
+    "prettier": "1.19.1",
+    "semantic-release": "17.0.4",
+    "semantic-release-config-aristek": "1.0.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "lint-staged": {
+    "*.js": "prettier --write"
+  },
+  "release": {
+    "extends": "semantic-release-config-aristek"
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  }
+}
