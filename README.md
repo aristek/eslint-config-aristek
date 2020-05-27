@@ -160,6 +160,14 @@ We prefer not to use classes so this rule is useless.
 "@typescript-eslint/unbound-method": "off"
 ```
 
+Any is the only option in some cases.
+
+#### @typescript-eslint/no-explicit-any
+
+```
+"@typescript-eslint/no-explicit-any": "off"
+```
+
 #### @typescript-eslint/no-empty-function
 
 Nothing bad in empty function.
@@ -171,7 +179,7 @@ Nothing bad in empty function.
 ]
 ```
 
-### JavaSript
+### JavaSсript
 
 #### linebreak-style
 
@@ -198,12 +206,20 @@ Example: condition ? method1() : method2().
 "no-unused-expressions": ["error", { allowTernary: true }]
 ```
 
-##### radix
+#### radix
 
 Disallows providing the 10 radix by default.
 
 ```
 radix: ["error", "as-needed"]
+```
+
+#### curly
+
+Forces using all curly braces.
+
+```
+curly: "error"
 ```
 
 #### react/jsx-one-expression-per-line
