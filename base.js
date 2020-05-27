@@ -18,6 +18,8 @@ module.exports = {
   rules: {
     // Disallows providing the 10 radix by default.
     radix: ["error", "as-needed"],
+    // Forces using all curly braces.
+    curly: "error",
     // Disable linebreak style to prevent conflicts different environments.
     "linebreak-style": "off",
     // Keep line between class members except of simple class properties
