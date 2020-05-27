@@ -179,7 +179,7 @@ Nothing bad in empty function.
 ]
 ```
 
-### JavaSсript
+### JavaScript
 
 #### linebreak-style
 
@@ -220,6 +220,14 @@ Forces using all curly braces.
 
 ```
 curly: "error"
+```
+
+#### global-require
+
+'require' is used only in config files (e.g. rollup).
+
+```
+"global-require": "off"
 ```
 
 #### react/jsx-one-expression-per-line

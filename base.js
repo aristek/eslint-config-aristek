@@ -20,6 +20,8 @@ module.exports = {
     radix: ["error", "as-needed"],
     // Forces using all curly braces.
     curly: "error",
+    // 'require' is used only in config files (e.g. rollup).
+    "global-require": "off",
     // Disable linebreak style to prevent conflicts different environments.
     "linebreak-style": "off",
     // Keep line between class members except of simple class properties
