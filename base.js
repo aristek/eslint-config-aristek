@@ -40,7 +40,7 @@ module.exports = {
     // We do not do any manipulations with array props and just pass it into the component.
     "react/forbid-prop-types": "off",
     // Disable for our own risk without any grounding for a while.
-    // It's also unnesessary for TypeScript users because all props are checking via types.
+    // It's also unnecessary for TypeScript users because all props are checking via types.
     "react/jsx-props-no-spreading": "off",
     // Disable this rule because it causes an error with special html chars
     // on some environments (e.g. Windows).

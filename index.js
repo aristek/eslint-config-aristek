@@ -69,6 +69,8 @@ module.exports = {
         ],
         // We prefer not to use classes so this rule is useless.
         "@typescript-eslint/unbound-method": "off",
+        // Any is the only option in some cases.
+        "@typescript-eslint/no-explicit-any": "off",
         // Nothing bad in empty function.
         "@typescript-eslint/no-empty-function": [
           "error",
