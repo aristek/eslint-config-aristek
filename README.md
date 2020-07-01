@@ -24,7 +24,7 @@ There are two possible configurations: TypeScript and JavaScript.
 Install the correct versions of each dependency:
 
 ```bash
-npm i -E -D eslint-config-aristek @typescript-eslint/eslint-plugin@2 @typescript-eslint/parser@2 babel-eslint@10 eslint@6 eslint-config-airbnb@18 eslint-config-prettier@6 eslint-plugin-import@2 eslint-plugin-jsx-a11y@6 eslint-plugin-only-warn@1 eslint-plugin-react@7 eslint-plugin-react-hooks@1
+npm i -E -D eslint-config-aristek @typescript-eslint/eslint-plugin@2 @typescript-eslint/parser@2 babel-eslint@10 eslint@6 eslint-config-airbnb@18 eslint-config-prettier@6 eslint-plugin-import@2 eslint-plugin-jsx-a11y@6 eslint-plugin-only-warn@1 eslint-plugin-react@7 eslint-plugin-react-hooks@4
 
 # or
 
@@ -46,7 +46,7 @@ Add this lines in your `package.json` file:
 Install the correct versions of each dependency:
 
 ```bash
-npm i -E -D eslint-config-aristek babel-eslint@10 eslint@6 eslint-config-airbnb@18 eslint-config-prettier@6 eslint-plugin-import@2 eslint-plugin-jsx-a11y@6 eslint-plugin-only-warn@1 eslint-plugin-react@7 eslint-plugin-react-hooks@1
+npm i -E -D eslint-config-aristek babel-eslint@10 eslint@6 eslint-config-airbnb@18 eslint-config-prettier@6 eslint-plugin-import@2 eslint-plugin-jsx-a11y@6 eslint-plugin-only-warn@1 eslint-plugin-react@7 eslint-plugin-react-hooks@4
 
 # or
 
