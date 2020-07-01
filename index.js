@@ -42,6 +42,8 @@ module.exports = {
       ],
       // TypeScript specific rules.
       rules: {
+        // Override again because we extend `prettier` after `baseConfig`.
+        curly: ["error", "all"],
         // Do not warn on `d.ts` references.
         "spaced-comment": ["error", "always", { markers: ["/"] }],
         // Typescript is used for type checking.
