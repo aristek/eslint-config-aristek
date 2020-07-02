@@ -35,6 +35,11 @@ module.exports = {
     // We prefer to use `if shorthands` for logic operations.
     // @example condition ? method1() : method2()
     "no-unused-expressions": ["error", { allowTernary: true }],
+    // 'defaultProps' on function components is deprecated by React (https://github.com/facebook/react/pull/16210).
+    "react/require-default-props": [
+      "error",
+      { ignoreFunctionalComponents: true }
+    ],
     // Allow both `.js` and `.jsx` extensions.
     "react/jsx-filename-extension": ["error", { extensions: [".js", ".jsx"] }],
     // There is no need to use alternatives everywhere like `shape`.
