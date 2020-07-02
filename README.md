@@ -199,7 +199,7 @@ Keep line between class members except of simple class properties e.g. class var
 
 #### no-unused-expressions
 
-There is no differences except `allowTernary` option. We prefer to use `if shorthands` for logic operations.
+There is no difference except `allowTernary` option. We prefer to use `if shorthands` for logic operations.
 Example: condition ? method1() : method2().
 
 ```
@@ -228,6 +228,17 @@ curly: "error"
 
 ```
 "global-require": "off"
+```
+
+#### react/require-default-props
+
+'defaultProps' on function components is deprecated by React (https://github.com/facebook/react/pull/16210).
+
+```
+"react/require-default-props": [
+  "error",
+  { ignoreFunctionalComponents: true }
+]
 ```
 
 #### react/jsx-one-expression-per-line
