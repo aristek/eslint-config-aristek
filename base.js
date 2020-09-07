@@ -35,6 +35,8 @@ module.exports = {
     // We prefer to use `if shorthands` for logic operations.
     // @example condition ? method1() : method2()
     "no-unused-expressions": ["error", { allowTernary: true }],
+    // Forbid empty if-else blocks, but allow empty `try {...} catch(e) {}`.
+    "no-empty": ["error", { allowEmptyCatch: true }],
     // 'defaultProps' on function components is deprecated by React (https://github.com/facebook/react/pull/16210).
     "react/require-default-props": [
       "error",
@@ -60,7 +62,7 @@ module.exports = {
     // Enforces the Rules of Hooks.
     "react-hooks/rules-of-hooks": "error",
     // Prevent missing `inputs` for hooks.
-    "react-hooks/exhaustive-deps": "off",
+    "react-hooks/exhaustive-deps": "error",
     // Stylistic preference.
     "import/prefer-default-export": "off",
     // Allow dev dependencies import for config, test, storybook files.

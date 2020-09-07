@@ -77,7 +77,9 @@ module.exports = {
         "@typescript-eslint/no-empty-function": [
           "error",
           { allow: ["arrowFunctions", "functions", "methods"] }
-        ]
+        ],
+        // Prevent unhandled promise error.
+        "@typescript-eslint/no-floating-promises": "error"
       }
     }
   ]
