@@ -179,6 +179,14 @@ Nothing bad in empty function.
 ]
 ```
 
+#### @typescript-eslint/no-floating-promises
+
+Prevent unhandled promise error.
+
+```
+"@typescript-eslint/no-floating-promises": "error"
+```
+
 ### JavaScript
 
 #### linebreak-style
@@ -204,6 +212,14 @@ Example: condition ? method1() : method2().
 
 ```
 "no-unused-expressions": ["error", { allowTernary: true }]
+```
+
+#### no-empty
+
+Forbid empty if-else blocks, but allow empty `try {...} catch(e) {}`.
+
+```
+"no-empty": ["error", { allowEmptyCatch: true }]
 ```
 
 #### radix
@@ -305,7 +321,7 @@ Enforces the Rules of Hooks.
 Prevent missing `inputs` for hooks.
 
 ```
-"react-hooks/exhaustive-deps": "off"
+"react-hooks/exhaustive-deps": "error"
 ```
 
 #### import/prefer-default-export
