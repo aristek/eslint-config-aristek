@@ -2,7 +2,7 @@ module.exports = {
   // Make this config default globally.
   root: true,
   // Default eslint parser for JavaScript.
-  parser: "babel-eslint",
+  parser: "@babel/eslint-parser",
   // Our eslint config based mainly on `airbnb` code style.
   // https://github.com/airbnb/javascript
   extends: ["airbnb", "prettier", "prettier/react"],
@@ -87,6 +87,8 @@ module.exports = {
     // This rule was deprecated in v6.1.0. It will no longer be maintained.
     // Use label-has-associated-control instead.
     "jsx-a11y/label-has-for": "off",
+    // Disable because of false positive cases with dynamic alt text.
+    "jsx-a11y/img-redundant-alt": "off",
     // We must provide this rule with `htmlFor` attribute (by default)
     // because this one was broken in airbnb config by `labelAttributes: []`.
     "jsx-a11y/label-has-associated-control": [

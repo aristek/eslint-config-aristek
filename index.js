@@ -79,7 +79,11 @@ module.exports = {
           { allow: ["arrowFunctions", "functions", "methods"] }
         ],
         // Prevent unhandled promise error.
-        "@typescript-eslint/no-floating-promises": "error"
+        "@typescript-eslint/no-floating-promises": "error",
+        // Disable for compatibility with `@typescript-eslint/no-use-before-define`.
+        "no-use-before-define": "off",
+        // Extend `no-use-before-define` to support TypeScript.
+        "@typescript-eslint/no-use-before-define": "error"
       }
     }
   ]

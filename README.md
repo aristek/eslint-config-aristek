@@ -24,11 +24,11 @@ There are two possible configurations: TypeScript and JavaScript.
 Install the correct versions of each dependency:
 
 ```bash
-npm i -E -D eslint-config-aristek@3 @typescript-eslint/eslint-plugin@2 @typescript-eslint/parser@2 babel-eslint@10 eslint@6 eslint-config-airbnb@18 eslint-config-prettier@6 eslint-plugin-import@2 eslint-plugin-jsx-a11y@6 eslint-plugin-only-warn@1 eslint-plugin-react@7 eslint-plugin-react-hooks@4
+npm i -E -D eslint-config-aristek@5 @typescript-eslint/eslint-plugin@4 @typescript-eslint/parser@4 @babel/eslint-parser@7 eslint@7 eslint-config-airbnb@18 eslint-config-prettier@6 eslint-plugin-import@2 eslint-plugin-jsx-a11y@6 eslint-plugin-only-warn@1 eslint-plugin-react@7 eslint-plugin-react-hooks@4
 
 # or
 
-yarn add -E -D eslint-config-aristek@3.0.2 @typescript-eslint/eslint-plugin@2.34.0 @typescript-eslint/parser@2.34.0 babel-eslint@10.1.0 eslint@6.8.0 eslint-config-airbnb@18.1.0 eslint-config-prettier@6.11.0 eslint-plugin-import@2.20.2 eslint-plugin-jsx-a11y@6.2.3 eslint-plugin-only-warn@1.0.2 eslint-plugin-react@7.20.0 eslint-plugin-react-hooks@4.0.3
+yarn add -E -D eslint-config-aristek@5.0.0 @typescript-eslint/eslint-plugin@4.6.0 @typescript-eslint/parser@4.6.0 @babel/eslint-parser@7.12.1 eslint@7.12.1 eslint-config-airbnb@18.2.0 eslint-config-prettier@6.15.0 eslint-plugin-import@2.22.2 eslint-plugin-jsx-a11y@6.4.1 eslint-plugin-only-warn@1.0.2 eslint-plugin-react@7.21.5 eslint-plugin-react-hooks@4.2.0
 ```
 
 Add this lines in your `package.json` file:
@@ -39,18 +39,18 @@ Add this lines in your `package.json` file:
 }
 ```
 
-> This preset also can be used for mixed codebases.
+> This preset can also be used for mixed codebases.
 
 ### JavaScript
 
 Install the correct versions of each dependency:
 
 ```bash
-npm i -E -D eslint-config-aristek@4 babel-eslint@10 eslint@6 eslint-config-airbnb@18 eslint-config-prettier@6 eslint-plugin-import@2 eslint-plugin-jsx-a11y@6 eslint-plugin-only-warn@1 eslint-plugin-react@7 eslint-plugin-react-hooks@4
+npm i -E -D eslint-config-aristek@5 @babel/eslint-parser@7 eslint@7 eslint-config-airbnb@18 eslint-config-prettier@6 eslint-plugin-import@2 eslint-plugin-jsx-a11y@6 eslint-plugin-only-warn@1 eslint-plugin-react@7 eslint-plugin-react-hooks@4
 
 # or
 
-yarn add -E -D eslint-config-aristek@4.0.0 babel-eslint@10.1.0 eslint@6.8.0 eslint-config-airbnb@18.1.0 eslint-config-prettier@6.11.0 eslint-plugin-import@2.20.2 eslint-plugin-jsx-a11y@6.2.3 eslint-plugin-only-warn@1.0.2 eslint-plugin-react@7.20.0 eslint-plugin-react-hooks@4.0.3
+yarn add -E -D eslint-config-aristek@5.0.0 @babel/eslint-parser@7.12.1 eslint@7.12.1 eslint-config-airbnb@18.2.0 eslint-config-prettier@6.15.0 eslint-plugin-import@2.22.1 eslint-plugin-jsx-a11y@6.4.1 eslint-plugin-only-warn@1.0.2 eslint-plugin-react@7.21.5 eslint-plugin-react-hooks@4.2.0
 ```
 
 Add this lines in your `package.json` file:
@@ -185,6 +185,22 @@ Prevent unhandled promise error.
 
 ```
 "@typescript-eslint/no-floating-promises": "error"
+```
+
+#### no-use-before-define
+
+Disable for compatibility with `@typescript-eslint/no-use-before-define`.
+
+```
+"no-use-before-define": "off"
+```
+
+#### @typescript-eslint/no-use-before-define
+
+Extend `no-use-before-define` to support TypeScript.
+
+```
+"@typescript-eslint/no-use-before-define": "error"
 ```
 
 ### JavaScript
@@ -375,6 +391,14 @@ This rule was deprecated in v6.1.0. It will no longer be maintained. Use label-h
 
 ```
 "jsx-a11y/label-has-for": "off"
+```
+
+#### jsx-a11y/img-redundant-alt
+
+Disable because of false positive cases with dynamic alt text.
+
+```
+"jsx-a11y/img-redundant-alt": "off"
 ```
 
 #### jsx-a11y/label-has-associated-control
