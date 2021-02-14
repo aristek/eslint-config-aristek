@@ -5,7 +5,7 @@ module.exports = {
   parser: "@babel/eslint-parser",
   // Our eslint config based mainly on `airbnb` code style.
   // https://github.com/airbnb/javascript
-  extends: ["airbnb", "prettier", "prettier/react"],
+  extends: ["airbnb", "airbnb/hooks", "prettier", "prettier/react"],
   // Set of eslint plugins for better development experience.
   plugins: ["import", "jsx-a11y", "react", "react-hooks", "only-warn"],
   // Support `browser` and `jest` in addition to `airbnb` envs.
@@ -59,10 +59,6 @@ module.exports = {
     // Use destructing only in render for `props` and `state`.
     // For handlers we use destruction only if needed.
     "react/destructuring-assignment": "off",
-    // Enforces the Rules of Hooks.
-    "react-hooks/rules-of-hooks": "error",
-    // Prevent missing `inputs` for hooks.
-    "react-hooks/exhaustive-deps": "error",
     // Stylistic preference.
     "import/prefer-default-export": "off",
     // Allow dev dependencies import for config, test, storybook files.
