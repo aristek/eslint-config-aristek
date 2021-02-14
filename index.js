@@ -78,12 +78,21 @@ module.exports = {
           "error",
           { allow: ["arrowFunctions", "functions", "methods"] }
         ],
-        // Prevent unhandled promise error.
-        "@typescript-eslint/no-floating-promises": "error",
         // Disable for compatibility with `@typescript-eslint/no-use-before-define`.
         "no-use-before-define": "off",
         // Extend `no-use-before-define` to support TypeScript.
-        "@typescript-eslint/no-use-before-define": "error"
+        "@typescript-eslint/no-use-before-define": "error",
+        // There is no need to enforce double typing because of type inheritance.
+        "@typescript-eslint/explicit-module-boundary-types": "off",
+        // Disable for compatibility with `@typescript-eslint/no-shadow`.
+        "no-shadow": "off",
+        // Nothing bad in type parameter shadow.
+        "@typescript-eslint/no-shadow": [
+          "error",
+          {
+            ignoreFunctionTypeParameterNameValueShadow: true
+          }
+        ]
       }
     }
   ]

@@ -28,7 +28,7 @@ npm i -E -D eslint-config-aristek@5 @typescript-eslint/eslint-plugin@4 @typescri
 
 # or
 
-yarn add -E -D eslint-config-aristek@5.0.0 @typescript-eslint/eslint-plugin@4.6.0 @typescript-eslint/parser@4.6.0 @babel/eslint-parser@7.12.1 eslint@7.12.1 eslint-config-airbnb@18.2.0 eslint-config-prettier@6.15.0 eslint-plugin-import@2.22.2 eslint-plugin-jsx-a11y@6.4.1 eslint-plugin-only-warn@1.0.2 eslint-plugin-react@7.21.5 eslint-plugin-react-hooks@4.2.0
+yarn add -E -D eslint-config-aristek@5.1.0 @typescript-eslint/eslint-plugin@4.6.0 @typescript-eslint/parser@4.6.0 @babel/eslint-parser@7.12.1 eslint@7.12.1 eslint-config-airbnb@18.2.0 eslint-config-prettier@6.15.0 eslint-plugin-import@2.22.2 eslint-plugin-jsx-a11y@6.4.1 eslint-plugin-only-warn@1.0.2 eslint-plugin-react@7.21.5 eslint-plugin-react-hooks@4.2.0
 ```
 
 Add this lines in your `package.json` file:
@@ -50,7 +50,7 @@ npm i -E -D eslint-config-aristek@5 @babel/eslint-parser@7 eslint@7 eslint-confi
 
 # or
 
-yarn add -E -D eslint-config-aristek@5.0.0 @babel/eslint-parser@7.12.1 eslint@7.12.1 eslint-config-airbnb@18.2.0 eslint-config-prettier@6.15.0 eslint-plugin-import@2.22.1 eslint-plugin-jsx-a11y@6.4.1 eslint-plugin-only-warn@1.0.2 eslint-plugin-react@7.21.5 eslint-plugin-react-hooks@4.2.0
+yarn add -E -D eslint-config-aristek@5.1.0 @babel/eslint-parser@7.12.1 eslint@7.12.1 eslint-config-airbnb@18.2.0 eslint-config-prettier@6.15.0 eslint-plugin-import@2.22.1 eslint-plugin-jsx-a11y@6.4.1 eslint-plugin-only-warn@1.0.2 eslint-plugin-react@7.21.5 eslint-plugin-react-hooks@4.2.0
 ```
 
 Add this lines in your `package.json` file:
@@ -72,8 +72,8 @@ To do this you should add the following lines in your `craco.config.js` file:
 module.exports = {
   eslint: {
     mode: ESLINT_MODES.file, // Remove default config.
-    loaderOptions: { resolvePluginsRelativeTo: process.cwd() } // Use eslint plugins from your node_modules, not from react-script's ones.
-  }
+    loaderOptions: { resolvePluginsRelativeTo: process.cwd() }, // Use eslint plugins from your node_modules, not from react-script's ones.
+  },
 };
 ```
 
@@ -179,14 +179,6 @@ Nothing bad in empty function.
 ]
 ```
 
-#### @typescript-eslint/no-floating-promises
-
-Prevent unhandled promise error.
-
-```
-"@typescript-eslint/no-floating-promises": "error"
-```
-
 #### no-use-before-define
 
 Disable for compatibility with `@typescript-eslint/no-use-before-define`.
@@ -201,6 +193,33 @@ Extend `no-use-before-define` to support TypeScript.
 
 ```
 "@typescript-eslint/no-use-before-define": "error"
+```
+
+#### @typescript-eslint/explicit-module-boundary-types
+
+There is no need to enforce double typing because of type inheritance.
+
+```
+"@typescript-eslint/explicit-module-boundary-types": "off"
+```
+
+#### no-shadow
+
+Disable for compatibility with `@typescript-eslint/no-shadow`.
+
+```
+"no-shadow": "off"
+```
+
+#### @typescript-eslint/no-shadow
+
+Nothing bad in type parameter shadow.
+
+```
+"@typescript-eslint/no-shadow": [
+  "error",
+  { ignoreFunctionTypeParameterNameValueShadow: true },
+],
 ```
 
 ### JavaScript
@@ -322,22 +341,6 @@ It's also unnecessary for TypeScript users because all props are checking via ty
 
 ```
 "react/jsx-props-no-spreading": "off"
-```
-
-#### react-hooks/rules-of-hooks
-
-Enforces the Rules of Hooks.
-
-```
-"react-hooks/rules-of-hooks": "error"
-```
-
-#### react-hooks/exhaustive-deps
-
-Prevent missing `inputs` for hooks.
-
-```
-"react-hooks/exhaustive-deps": "error"
 ```
 
 #### import/prefer-default-export
