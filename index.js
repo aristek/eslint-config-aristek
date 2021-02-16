@@ -2,7 +2,7 @@ const path = require("path");
 const fs = require("fs");
 
 const appDirectory = fs.realpathSync(process.cwd());
-const resolveApp = relativePath => path.resolve(appDirectory, relativePath);
+const resolveApp = (relativePath) => path.resolve(appDirectory, relativePath);
 const projectRoot = resolveApp(".");
 const tsConfig = resolveApp("tsconfig.json");
 
@@ -20,8 +20,8 @@ module.exports = {
       rules: {
         // Disable for 'js' files in case of mixed configs as described in docs.
         // https://github.com/typescript-eslint/typescript-eslint/issues/851
-        "@typescript-eslint/explicit-function-return-type": "off"
-      }
+        "@typescript-eslint/explicit-function-return-type": "off",
+      },
     },
     {
       // Extend config for ts(x) files.
@@ -37,8 +37,9 @@ module.exports = {
         "plugin:@typescript-eslint/recommended",
         "plugin:import/typescript",
         "prettier",
+        "prettier/prettier",
         "prettier/react",
-        "prettier/@typescript-eslint"
+        "prettier/@typescript-eslint",
       ],
       // TypeScript specific rules.
       rules: {
@@ -51,7 +52,7 @@ module.exports = {
         // Allow ts(x) extensions for files with JSX.
         "react/jsx-filename-extension": [
           "error",
-          { extensions: [".js", ".jsx", ".tsx"] }
+          { extensions: [".js", ".jsx", ".tsx"] },
         ],
         // TypeScript is used for type checking.
         "react/prop-types": "off",
@@ -61,13 +62,13 @@ module.exports = {
         // Also do not throw for const typed functions.
         "@typescript-eslint/explicit-function-return-type": [
           "error",
-          { allowExpressions: true, allowTypedFunctionExpressions: true }
+          { allowExpressions: true, allowTypedFunctionExpressions: true },
         ],
         // Ignore unused vars for edge case (rest props)
         // e.g. { className, ...rest }
         "@typescript-eslint/no-unused-vars": [
           "error",
-          { ignoreRestSiblings: true }
+          { ignoreRestSiblings: true },
         ],
         // We prefer not to use classes so this rule is useless.
         "@typescript-eslint/unbound-method": "off",
@@ -76,7 +77,7 @@ module.exports = {
         // Nothing bad in empty function.
         "@typescript-eslint/no-empty-function": [
           "error",
-          { allow: ["arrowFunctions", "functions", "methods"] }
+          { allow: ["arrowFunctions", "functions", "methods"] },
         ],
         // Disable for compatibility with `@typescript-eslint/no-use-before-define`.
         "no-use-before-define": "off",
@@ -90,10 +91,10 @@ module.exports = {
         "@typescript-eslint/no-shadow": [
           "error",
           {
-            ignoreFunctionTypeParameterNameValueShadow: true
-          }
-        ]
-      }
-    }
-  ]
+            ignoreFunctionTypeParameterNameValueShadow: true,
+          },
+        ],
+      },
+    },
+  ],
 };

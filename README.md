@@ -21,14 +21,16 @@ There are two possible configurations: TypeScript and JavaScript.
 
 ### TypeScript
 
-Install the correct versions of each dependency:
+Install the correct versions of each dependency via npm:
 
 ```bash
-npm i -E -D eslint-config-aristek@5 @typescript-eslint/eslint-plugin@4 @typescript-eslint/parser@4 @babel/eslint-parser@7 eslint@7 eslint-config-airbnb@18 eslint-config-prettier@6 eslint-plugin-import@2 eslint-plugin-jsx-a11y@6 eslint-plugin-only-warn@1 eslint-plugin-react@7 eslint-plugin-react-hooks@4
+npm i -E -D eslint@7 eslint-config-aristek@5 eslint-config-airbnb@18 eslint-config-prettier@7 eslint-plugin-import@2 eslint-plugin-jsx-a11y@6 eslint-plugin-only-warn@1 eslint-plugin-react@7 eslint-plugin-react-hooks@4 @babel/eslint-parser@7 @typescript-eslint/eslint-plugin@4 @typescript-eslint/parser@4
+```
 
-# or
+Or via yarn:
 
-yarn add -E -D eslint-config-aristek@5.1.0 @typescript-eslint/eslint-plugin@4.6.0 @typescript-eslint/parser@4.6.0 @babel/eslint-parser@7.12.1 eslint@7.12.1 eslint-config-airbnb@18.2.0 eslint-config-prettier@6.15.0 eslint-plugin-import@2.22.2 eslint-plugin-jsx-a11y@6.4.1 eslint-plugin-only-warn@1.0.2 eslint-plugin-react@7.21.5 eslint-plugin-react-hooks@4.2.0
+```bash
+yarn add -E -D eslint@7.20.0 eslint-config-aristek@5.1.0 eslint-config-airbnb@18.2.0 eslint-config-prettier@7.2.0 eslint-plugin-import@2.22.0 eslint-plugin-jsx-a11y@6.4.0 eslint-plugin-only-warn@1.0.2 eslint-plugin-react@7.20.0 eslint-plugin-react-hooks@4.2.0 @babel/eslint-parser@7.12.0 @typescript-eslint/eslint-plugin@4.15.0 @typescript-eslint/parser@4.15.0
 ```
 
 Add this lines in your `package.json` file:
@@ -43,14 +45,16 @@ Add this lines in your `package.json` file:
 
 ### JavaScript
 
-Install the correct versions of each dependency:
+Install the correct versions of each dependency via npm:
 
 ```bash
-npm i -E -D eslint-config-aristek@5 @babel/eslint-parser@7 eslint@7 eslint-config-airbnb@18 eslint-config-prettier@6 eslint-plugin-import@2 eslint-plugin-jsx-a11y@6 eslint-plugin-only-warn@1 eslint-plugin-react@7 eslint-plugin-react-hooks@4
+npm i -E -D eslint@7 eslint-config-aristek@5 eslint-config-airbnb@18 eslint-config-prettier@7 eslint-plugin-import@2 eslint-plugin-jsx-a11y@6 eslint-plugin-only-warn@1 eslint-plugin-react@7 eslint-plugin-react-hooks@4 @babel/eslint-parser@7
+```
 
-# or
+Or via yarn:
 
-yarn add -E -D eslint-config-aristek@5.1.0 @babel/eslint-parser@7.12.1 eslint@7.12.1 eslint-config-airbnb@18.2.0 eslint-config-prettier@6.15.0 eslint-plugin-import@2.22.1 eslint-plugin-jsx-a11y@6.4.1 eslint-plugin-only-warn@1.0.2 eslint-plugin-react@7.21.5 eslint-plugin-react-hooks@4.2.0
+```bash
+yarn add -E -D eslint@7.20.0 eslint-config-aristek@5.1.0 eslint-config-airbnb@18.2.0 eslint-config-prettier@7.2.0 eslint-plugin-import@2.22.0 eslint-plugin-jsx-a11y@6.4.0 eslint-plugin-only-warn@1.0.2 eslint-plugin-react@7.20.0 eslint-plugin-react-hooks@4.2.0 @babel/eslint-parser@7.12.0
 ```
 
 Add this lines in your `package.json` file:

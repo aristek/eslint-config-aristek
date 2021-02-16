@@ -5,14 +5,20 @@ module.exports = {
   parser: "@babel/eslint-parser",
   // Our eslint config based mainly on `airbnb` code style.
   // https://github.com/airbnb/javascript
-  extends: ["airbnb", "airbnb/hooks", "prettier", "prettier/react"],
+  extends: [
+    "airbnb",
+    "airbnb/hooks",
+    "prettier",
+    "prettier/prettier",
+    "prettier/react",
+  ],
   // Set of eslint plugins for better development experience.
   plugins: ["import", "jsx-a11y", "react", "react-hooks", "only-warn"],
   // Support `browser` and `jest` in addition to `airbnb` envs.
   env: { browser: true, jest: true },
   // Resolve absolute imports from node_modules and src.
   settings: {
-    "import/resolver": { node: { moduleDirectory: ["node_modules", "src"] } }
+    "import/resolver": { node: { moduleDirectory: ["node_modules", "src"] } },
   },
   // Default rules for all project files.
   rules: {
@@ -29,7 +35,7 @@ module.exports = {
     "lines-between-class-members": [
       "error",
       "always",
-      { exceptAfterSingleLine: true }
+      { exceptAfterSingleLine: true },
     ],
     // There is no difference except `allowTernary` option.
     // We prefer to use `if shorthands` for logic operations.
@@ -40,7 +46,7 @@ module.exports = {
     // 'defaultProps' on function components is deprecated by React (https://github.com/facebook/react/pull/16210).
     "react/require-default-props": [
       "error",
-      { ignoreFunctionalComponents: true }
+      { ignoreFunctionalComponents: true },
     ],
     // Allow both `.js` and `.jsx` extensions.
     "react/jsx-filename-extension": ["error", { extensions: [".js", ".jsx"] }],
@@ -70,15 +76,15 @@ module.exports = {
           "**/*.config.*",
           "**/*.test.*",
           "**/*.stories.*",
-          "src/setupTests.*"
-        ]
-      }
+          "src/setupTests.*",
+        ],
+      },
     ],
     // No need to specify extensions if files are named correctly.
     "import/extensions": [
       "error",
       "ignorePackages",
-      { js: "never", jsx: "never", ts: "never", tsx: "never", mjs: "never" }
+      { js: "never", jsx: "never", ts: "never", tsx: "never", mjs: "never" },
     ],
     // This rule was deprecated in v6.1.0. It will no longer be maintained.
     // Use label-has-associated-control instead.
@@ -89,7 +95,7 @@ module.exports = {
     // because this one was broken in airbnb config by `labelAttributes: []`.
     "jsx-a11y/label-has-associated-control": [
       "error",
-      { labelAttributes: ["htmlFor"] }
-    ]
-  }
+      { labelAttributes: ["htmlFor"] },
+    ],
+  },
 };
