@@ -30,7 +30,7 @@ npm i -E -D eslint@7 eslint-config-aristek@5 eslint-config-airbnb@18 eslint-conf
 Or via yarn:
 
 ```bash
-yarn add -E -D eslint@7.20.0 eslint-config-aristek@5.1.0 eslint-config-airbnb@18.2.0 eslint-config-prettier@7.2.0 eslint-plugin-import@2.22.0 eslint-plugin-jsx-a11y@6.4.0 eslint-plugin-only-warn@1.0.2 eslint-plugin-react@7.20.0 eslint-plugin-react-hooks@4.2.0 @babel/eslint-parser@7.12.0 @typescript-eslint/eslint-plugin@4.15.0 @typescript-eslint/parser@4.15.0
+yarn add -E -D eslint@7.20.0 eslint-config-aristek@5.2.0 eslint-config-airbnb@18.2.0 eslint-config-prettier@7.2.0 eslint-plugin-import@2.22.0 eslint-plugin-jsx-a11y@6.4.0 eslint-plugin-only-warn@1.0.2 eslint-plugin-react@7.20.0 eslint-plugin-react-hooks@4.2.0 @babel/eslint-parser@7.12.0 @typescript-eslint/eslint-plugin@4.15.0 @typescript-eslint/parser@4.15.0
 ```
 
 Add this lines in your `package.json` file:
@@ -54,7 +54,7 @@ npm i -E -D eslint@7 eslint-config-aristek@5 eslint-config-airbnb@18 eslint-conf
 Or via yarn:
 
 ```bash
-yarn add -E -D eslint@7.20.0 eslint-config-aristek@5.1.0 eslint-config-airbnb@18.2.0 eslint-config-prettier@7.2.0 eslint-plugin-import@2.22.0 eslint-plugin-jsx-a11y@6.4.0 eslint-plugin-only-warn@1.0.2 eslint-plugin-react@7.20.0 eslint-plugin-react-hooks@4.2.0 @babel/eslint-parser@7.12.0
+yarn add -E -D eslint@7.20.0 eslint-config-aristek@5.2.0 eslint-config-airbnb@18.2.0 eslint-config-prettier@7.2.0 eslint-plugin-import@2.22.0 eslint-plugin-jsx-a11y@6.4.0 eslint-plugin-only-warn@1.0.2 eslint-plugin-react@7.20.0 eslint-plugin-react-hooks@4.2.0 @babel/eslint-parser@7.12.0
 ```
 
 Add this lines in your `package.json` file:
@@ -135,14 +135,10 @@ TypeScript is used for type checking.
 
 #### @typescript-eslint/explicit-function-return-type
 
-Do not throw error for function expressions and just use inner function typings.
-Also do not throw for const typed functions.
+Do not throw error because we prefer to use type inheritance.
 
 ```
-"@typescript-eslint/explicit-function-return-type": [
-  "error",
-  { allowExpressions: true, allowTypedFunctionExpressions: true }
-]
+"@typescript-eslint/explicit-function-return-type": "off"
 ```
 
 #### @typescript-eslint/no-unused-vars

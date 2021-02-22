@@ -58,12 +58,8 @@ module.exports = {
         "react/prop-types": "off",
         // TypeScript is used for type checking.
         "react/forbid-prop-types": "off",
-        // Do not throw error for function expressions and just use inner function typings.
-        // Also do not throw for const typed functions.
-        "@typescript-eslint/explicit-function-return-type": [
-          "error",
-          { allowExpressions: true, allowTypedFunctionExpressions: true },
-        ],
+        // Do not throw error because we prefer to use type inheritance.
+        "@typescript-eslint/explicit-function-return-type": "off",
         // Ignore unused vars for edge case (rest props)
         // e.g. { className, ...rest }
         "@typescript-eslint/no-unused-vars": [
