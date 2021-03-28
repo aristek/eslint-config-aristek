@@ -43,6 +43,27 @@ module.exports = {
     "no-unused-expressions": ["error", { allowTernary: true }],
     // Forbid empty if-else blocks, but allow empty `try {...} catch(e) {}`.
     "no-empty": ["error", { allowEmptyCatch: true }],
+    // Extend airbnb rule to remove eslint warning for immer usage also.
+    "no-param-reassign": [
+      "error",
+      {
+        props: true,
+        ignorePropertyModificationsForRegex: [
+          "acc", // for reduce accumulators
+          "accumulator", // for reduce accumulators
+          "e", // for e.returnvalue
+          "ctx", // for Koa routing
+          "context", // for Koa routing
+          "req", // for Express requests
+          "request", // for Express requests
+          "res", // for Express responses
+          "response", // for Express responses
+          "$scope", // for Angular 1 scopes
+          "staticContext", // for ReactRouter context
+          "draft", // for immer
+        ],
+      },
+    ],
     // 'defaultProps' on function components is deprecated by React (https://github.com/facebook/react/pull/16210).
     "react/require-default-props": [
       "error",
