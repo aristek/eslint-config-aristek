@@ -14,7 +14,7 @@ module.exports = {
       // Extend config for js(x) files.
       files: ["**/*.js?(x)"],
       // Default eslint parser for JavaScript.
-      parser: "babel-eslint",
+      parser: "@babel/eslint-parser",
       // Additionally, resolve imports from ts(x) files into js(x).
       extends: [baseConfig, "plugin:import/typescript"],
       rules: {

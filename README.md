@@ -30,7 +30,7 @@ npm i -E -D eslint@7 eslint-config-aristek@5 eslint-config-airbnb@18 eslint-conf
 Or via yarn:
 
 ```bash
-yarn add -E -D eslint@7.20.0 eslint-config-aristek@5.3.0 eslint-config-airbnb@18.2.1 eslint-config-prettier@7.2.0 eslint-plugin-import@2.22.1 eslint-plugin-jsx-a11y@6.4.1 eslint-plugin-only-warn@1.0.2 eslint-plugin-react@7.20.0 eslint-plugin-react-hooks@4.2.0 @babel/eslint-parser@7.12.17 @typescript-eslint/eslint-plugin@4.15.2 @typescript-eslint/parser@4.15.2
+yarn add -E -D eslint@7.20.0 eslint-config-aristek@5.3.1 eslint-config-airbnb@18.2.1 eslint-config-prettier@7.2.0 eslint-plugin-import@2.22.1 eslint-plugin-jsx-a11y@6.4.1 eslint-plugin-only-warn@1.0.2 eslint-plugin-react@7.20.0 eslint-plugin-react-hooks@4.2.0 @babel/eslint-parser@7.12.17 @typescript-eslint/eslint-plugin@4.15.2 @typescript-eslint/parser@4.15.2
 ```
 
 Add this lines in your `package.json` file:
@@ -54,7 +54,7 @@ npm i -E -D eslint@7 eslint-config-aristek@5 eslint-config-airbnb@18 eslint-conf
 Or via yarn:
 
 ```bash
-yarn add -E -D eslint@7.20.0 eslint-config-aristek@5.3.0 eslint-config-airbnb@18.2.1 eslint-config-prettier@7.2.0 eslint-plugin-import@2.22.1 eslint-plugin-jsx-a11y@6.4.1 eslint-plugin-only-warn@1.0.2 eslint-plugin-react@7.20.0 eslint-plugin-react-hooks@4.2.0 @babel/eslint-parser@7.12.17
+yarn add -E -D eslint@7.20.0 eslint-config-aristek@5.3.1 eslint-config-airbnb@18.2.1 eslint-config-prettier@7.2.0 eslint-plugin-import@2.22.1 eslint-plugin-jsx-a11y@6.4.1 eslint-plugin-only-warn@1.0.2 eslint-plugin-react@7.20.0 eslint-plugin-react-hooks@4.2.0 @babel/eslint-parser@7.12.17
 ```
 
 Add this lines in your `package.json` file:
