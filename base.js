@@ -3,6 +3,9 @@ module.exports = {
   root: true,
   // Default eslint parser for JavaScript.
   parser: "@babel/eslint-parser",
+  parserOptions: {
+    requireConfigFile: false,
+  },
   // Our eslint config based mainly on `airbnb` code style.
   // https://github.com/airbnb/javascript
   extends: [
