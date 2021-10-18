@@ -4,6 +4,7 @@
 - [Usage](#usage)
   - [TypeScript](#typescript)
   - [JavaScript](#javascript)
+  - [GraphQL](#graphql)
   - [create-react-app](#create-react-app)
 - [Rules](#rules)
 
@@ -12,12 +13,13 @@
 - Based on [airbnb code style](https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb).
 - Uses [react](https://github.com/yannickcr/eslint-plugin-react), [react-hooks](https://github.com/facebook/react/tree/master/packages/eslint-plugin-react-hooks), [import](https://github.com/benmosher/eslint-plugin-import), [jsx-a11y](https://github.com/evcohen/eslint-plugin-jsx-a11y) and [only-warn](https://github.com/bfanger/eslint-plugin-only-warn) plugins.
 - TypeScript is supported basing on [@typescript-eslint/parser](https://github.com/typescript-eslint/typescript-eslint/tree/master/packages/parser) and [@typescript-eslint/eslint-plugin](https://github.com/typescript-eslint/typescript-eslint/tree/master/packages/eslint-plugin).
+- GraphQL is supported basing on [@graphql-eslint/eslint-plugin](https://github.com/dotansimha/graphql-eslint).
 - Absolute imports friendly for node_modules and src.
 - Compatible with prettier.
 
 ## Usage
 
-There are two possible configurations: TypeScript and JavaScript.
+There are three presets: TypeScript, JavaScript and GraphQL.
 
 ### TypeScript
 
@@ -66,6 +68,28 @@ Add this lines in your `package.json` file:
 ```
 
 > This preset should be used for JavaScript only projects.
+
+### GraphQL
+
+Install the correct versions of each dependency via npm:
+
+```bash
+npm i -E -D @graphql-eslint/eslint-plugin@2
+```
+
+Or via yarn:
+
+```bash
+yarn add -E -D @graphql-eslint/eslint-plugin@2.2.0
+```
+
+Add this lines in your `package.json` file:
+
+```json
+"eslintConfig": {
+  "extends": "aristek/graphql"
+}
+```
 
 ## create-react-app
 
@@ -446,4 +470,30 @@ https://github.com/typescript-eslint/typescript-eslint/issues/851
 
 ```
 "@typescript-eslint/explicit-function-return-type": "off"
+```
+
+### GraphQL
+
+#### @graphql-eslint/avoid-duplicate-fields
+
+Avoid querying same field multiple times within same operation. 
+
+```
+"@graphql-eslint/avoid-duplicate-fields": "error"
+```
+
+#### @graphql-eslint/no-deprecated
+
+Do not use deprecated fields.
+
+```
+"@graphql-eslint/no-deprecated": "error"
+```
+
+#### @graphql-eslint/unique-operation-name
+
+Force unique operation names usage. Duplicate names will cause @graphql-codegen tool to crash.
+
+```
+"@graphql-eslint/unique-operation-name": "error"
 ```
