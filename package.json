@@ -11,6 +11,10 @@
     "typescript.js"
   ],
   "peerDependencies": {
+    "@babel/eslint-parser": "^7.16.3",
+    "@graphql-eslint/eslint-plugin": "^2.4.1",
+    "@typescript-eslint/eslint-plugin": "^4.33.0",
+    "@typescript-eslint/parser": "^4.33.0",
     "eslint": "^7.32.0",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-config-prettier": "^8.3.0",
@@ -19,12 +23,6 @@
     "eslint-plugin-only-warn": "^1.0.3",
     "eslint-plugin-react": "^7.26.1",
     "eslint-plugin-react-hooks": "^4.3.0"
-  },
-  "optionalDependencies": {
-    "@babel/eslint-parser": "^7.16.3",
-    "@graphql-eslint/eslint-plugin": "^2.4.1",
-    "@typescript-eslint/eslint-plugin": "^4.33.0",
-    "@typescript-eslint/parser": "^4.33.0"
   },
   "devDependencies": {
     "@commitlint/cli": "14.1.0",

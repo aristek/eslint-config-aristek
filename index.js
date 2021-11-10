@@ -7,7 +7,7 @@ module.exports = {
   parserOptions: { requireConfigFile: false },
   // Our eslint config based mainly on `airbnb` code style.
   // https://github.com/airbnb/javascript
-  extends: ["airbnb", "airbnb/hooks", "prettier"],
+  extends: ["airbnb", "airbnb/hooks"],
   // Set of eslint plugins for better development experience.
   plugins: ["import", "jsx-a11y", "react", "react-hooks", "only-warn"],
   // Support `browser` and `jest` in addition to `airbnb` envs.
