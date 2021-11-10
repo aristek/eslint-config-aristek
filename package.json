@@ -11,28 +11,28 @@
     "graphql.js"
   ],
   "peerDependencies": {
-    "@babel/eslint-parser": "^7.12.0",
-    "eslint": "^7.20.0",
-    "eslint-config-airbnb": "^18.2.0",
-    "eslint-config-prettier": "^7.2.0",
-    "eslint-plugin-import": "^2.22.0",
-    "eslint-plugin-jsx-a11y": "^6.4.0",
-    "eslint-plugin-only-warn": "^1.0.2",
-    "eslint-plugin-react": "^7.20.0",
-    "eslint-plugin-react-hooks": "^4.2.0"
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-only-warn": "^1.0.3",
+    "eslint-plugin-react": "^7.26.1",
+    "eslint-plugin-react-hooks": "^4.3.0"
   },
   "optionalDependencies": {
-    "@typescript-eslint/eslint-plugin": "^4.15.0",
-    "@typescript-eslint/parser": "^4.15.0",
-    "@graphql-eslint/eslint-plugin": "^2.2.0"
+    "@babel/eslint-parser": "^7.16.3",
+    "@graphql-eslint/eslint-plugin": "^2.4.1",
+    "@typescript-eslint/eslint-plugin": "^4.33.0",
+    "@typescript-eslint/parser": "^4.33.0"
   },
   "devDependencies": {
-    "@commitlint/cli": "12.0.0",
-    "@commitlint/config-conventional": "12.0.0",
-    "husky": "4.2.1",
-    "lint-staged": "10.5.4",
-    "prettier": "2.2.1",
-    "semantic-release": "17.2.3",
+    "@commitlint/cli": "14.1.0",
+    "@commitlint/config-conventional": "14.1.0",
+    "husky": "4.3.8",
+    "lint-staged": "11.2.6",
+    "prettier": "2.4.1",
+    "semantic-release": "18.0.0",
     "semantic-release-config-aristek": "1.0.1"
   },
   "husky": {
@@ -48,8 +48,6 @@
     "extends": "semantic-release-config-aristek"
   },
   "commitlint": {
-    "extends": [
-      "@commitlint/config-conventional"
-    ]
+    "extends": "@commitlint/config-conventional"
   }
 }
