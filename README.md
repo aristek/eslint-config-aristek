@@ -7,6 +7,8 @@ ESLint config based on team guideline and experience for React projects.
   - [Basic](#basic)
   - [TypeScript](#typescript)
   - [GraphQL](#graphql)
+  - [CSS Modules](#css-modules)
+  - [Prettier](#prettier)
   - [create-react-app](#create-react-app)
 - [Rules](#rules)
 
@@ -61,7 +63,7 @@ Or via yarn:
 yarn add -E -D @typescript-eslint/eslint-plugin@4.33.0 @typescript-eslint/parser@4.33.0
 ```
 
-Add `aristek/typescript` to eslint config in your `package.json` file. This will be looks like:
+Extend from `aristek/typescript` in your eslint configuration. This can be looks like:
 
 ```json
 "eslintConfig": {
@@ -76,7 +78,7 @@ Add `aristek/typescript` to eslint config in your `package.json` file. This will
 
 ### GraphQL
 
-Install the correct versions of each dependency to add GraphQL support to your project via npm:
+Install the correct version of dependency to add GraphQL support to your project via npm:
 
 ```bash
 npm i -E -D @graphql-eslint/eslint-plugin@2
@@ -88,7 +90,7 @@ Or via yarn:
 yarn add -E -D @graphql-eslint/eslint-plugin@2.4.1
 ```
 
-Add `aristek/graphql` to eslint config in your `package.json` file. This will be looks like:
+Extend from `aristek/graphql` in your eslint configuration. This can be looks like:
 
 ```json
 "eslintConfig": {
@@ -99,9 +101,34 @@ Add `aristek/graphql` to eslint config in your `package.json` file. This will be
 }
 ```
 
+### CSS Modules
+
+Install the correct version of dependency to add CSS Modules support to your project via npm:
+
+```bash
+npm i -E -D eslint-plugin-css-modules@2
+```
+
+Or via yarn:
+
+```bash
+yarn add -E -D eslint-plugin-css-modules@2.11.0
+```
+
+Extend from `aristek/css-modules` in your eslint configuration. This can be looks like:
+
+```json
+"eslintConfig": {
+  "extends": [
+    "aristek",
+    "aristek/css-modules"
+  ]
+}
+```
+
 ### Prettier
 
-Install the correct versions of each dependency to add Prettier support to your project via npm:
+Install the correct version of dependency to add Prettier support to your project via npm:
 
 ```bash
 npm i -E -D eslint-config-prettier@8
@@ -113,7 +140,7 @@ Or via yarn:
 yarn add -E -D eslint-config-prettier@8.3.0
 ```
 
-Add `aristek/prettier` to eslint config in your `package.json` file. This will be looks like:
+Extend from `aristek/prettier` in your eslint configuration. This can be looks like:
 
 ```json
 "eslintConfig": {
