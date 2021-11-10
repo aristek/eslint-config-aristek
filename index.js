@@ -9,7 +9,7 @@ module.exports = {
   // https://github.com/airbnb/javascript
   extends: ["airbnb", "airbnb/hooks"],
   // Set of eslint plugins for better development experience.
-  plugins: ["import", "jsx-a11y", "react", "react-hooks", "only-warn"],
+  plugins: ["import", "jsx-a11y", "react", "react-hooks"],
   // Support `browser` and `jest` in addition to `airbnb` envs.
   env: { browser: true, jest: true },
   // Resolve absolute imports from node_modules and src.
