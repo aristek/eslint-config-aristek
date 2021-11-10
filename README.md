@@ -72,7 +72,7 @@ Add `aristek/typescript` to eslint config in your `package.json` file. This will
 }
 ```
 
-> This preset can also be used for mixed codebases. But if you have specified allowJs false in tsconfig you can remove @babel/eslint-parser from your dependencies.
+> This preset can also be used for mixed codebases. But if you have specified allowJs to false in tsconfig you can remove @babel/eslint-parser from your dependencies.
 
 ### GraphQL
 

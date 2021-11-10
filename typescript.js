@@ -6,8 +6,6 @@ const resolveApp = (relativePath) => path.resolve(appDirectory, relativePath);
 const projectRoot = resolveApp(".");
 const tsConfig = resolveApp("tsconfig.json");
 
-const baseConfig = require.resolve("./base");
-
 module.exports = {
   overrides: [
     {
@@ -16,7 +14,7 @@ module.exports = {
       // Default eslint parser for JavaScript.
       parser: "@babel/eslint-parser",
       // Additionally, resolve imports from ts(x) files into js(x).
-      extends: [baseConfig, "plugin:import/typescript"],
+      extends: ["plugin:import/typescript"],
       rules: {
         // Disable for 'js' files in case of mixed configs as described in docs.
         // https://github.com/typescript-eslint/typescript-eslint/issues/851
@@ -31,12 +29,10 @@ module.exports = {
       parser: "@typescript-eslint/parser",
       // Find project's root and project's `tsconfig.json` for parser.
       parserOptions: { project: tsConfig, tsconfigRootDir: projectRoot },
-      // Extend default config with typescript and prettier in right order.
+      // Extend config with typescript and typescript import in right order.
       extends: [
-        baseConfig,
         "plugin:@typescript-eslint/recommended",
         "plugin:import/typescript",
-        "prettier",
       ],
       // TypeScript specific rules.
       rules: {
