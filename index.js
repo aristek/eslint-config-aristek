@@ -60,6 +60,8 @@ module.exports = {
         ],
       },
     ],
+    // Negated conditions are more difficult to understand.
+    "no-negated-condition": "error",
     // Stylistic preference.
     "import/prefer-default-export": "off",
     // Allow dev dependencies import for config, test, storybook files.
