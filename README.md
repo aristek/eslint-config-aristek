@@ -1,9 +1,11 @@
 # eslint-config-aristek
 
+ESLint config based on team guideline and experience for React projects.
+
 - [Features](#features)
 - [Usage](#usage)
+  - [Basic](#basic)
   - [TypeScript](#typescript)
-  - [JavaScript](#javascript)
   - [GraphQL](#graphql)
   - [create-react-app](#create-react-app)
 - [Rules](#rules)
@@ -19,23 +21,23 @@
 
 ## Usage
 
-There are three presets: TypeScript, JavaScript and GraphQL.
+There are several possible presets that you can setup using our config.
 
-### TypeScript
+### Basic
 
-Install the correct versions of each dependency via npm:
+Let's start from installing core dependencies with correct versions of each dependency via npm:
 
 ```bash
-npm i -E -D eslint@7 eslint-config-aristek@5 eslint-config-airbnb@18 eslint-config-prettier@7 eslint-plugin-import@2 eslint-plugin-jsx-a11y@6 eslint-plugin-only-warn@1 eslint-plugin-react@7 eslint-plugin-react-hooks@4 @babel/eslint-parser@7 @typescript-eslint/eslint-plugin@4 @typescript-eslint/parser@4
+npm i -E -D eslint@7 eslint-config-aristek@5 eslint-config-airbnb@18 eslint-config-prettier@8 eslint-plugin-import@2 eslint-plugin-jsx-a11y@6 eslint-plugin-only-warn@1 eslint-plugin-react@7 eslint-plugin-react-hooks@4 @babel/eslint-parser@7
 ```
 
 Or via yarn:
 
 ```bash
-yarn add -E -D eslint@7.20.0 eslint-config-aristek@5.3.1 eslint-config-airbnb@18.2.1 eslint-config-prettier@7.2.0 eslint-plugin-import@2.22.1 eslint-plugin-jsx-a11y@6.4.1 eslint-plugin-only-warn@1.0.2 eslint-plugin-react@7.20.0 eslint-plugin-react-hooks@4.2.0 @babel/eslint-parser@7.12.17 @typescript-eslint/eslint-plugin@4.15.2 @typescript-eslint/parser@4.15.2
+yarn add -E -D eslint@7.32.0 eslint-config-aristek@5.4.1 eslint-config-airbnb@18.2.1 eslint-config-prettier@8.3.0 eslint-plugin-import@2.25.3 eslint-plugin-jsx-a11y@6.4.1 eslint-plugin-only-warn@1.0.3 eslint-plugin-react@7.26.1 eslint-plugin-react-hooks@4.3.0 @babel/eslint-parser@7.16.3
 ```
 
-Add this lines in your `package.json` file:
+Then add this lines in your `package.json` file:
 
 ```json
 "eslintConfig": {
@@ -43,35 +45,38 @@ Add this lines in your `package.json` file:
 }
 ```
 
-> This preset can also be used for mixed codebases.
+> This preset should be used for JavaScript only projects.
 
-### JavaScript
+### TypeScript
 
-Install the correct versions of each dependency via npm:
+Install the correct versions of each dependency to add TypeScript support to your project via npm:
 
 ```bash
-npm i -E -D eslint@7 eslint-config-aristek@5 eslint-config-airbnb@18 eslint-config-prettier@7 eslint-plugin-import@2 eslint-plugin-jsx-a11y@6 eslint-plugin-only-warn@1 eslint-plugin-react@7 eslint-plugin-react-hooks@4 @babel/eslint-parser@7
+npm i -E -D @typescript-eslint/eslint-plugin@4 @typescript-eslint/parser@4
 ```
 
 Or via yarn:
 
 ```bash
-yarn add -E -D eslint@7.20.0 eslint-config-aristek@5.3.1 eslint-config-airbnb@18.2.1 eslint-config-prettier@7.2.0 eslint-plugin-import@2.22.1 eslint-plugin-jsx-a11y@6.4.1 eslint-plugin-only-warn@1.0.2 eslint-plugin-react@7.20.0 eslint-plugin-react-hooks@4.2.0 @babel/eslint-parser@7.12.17
+yarn add -E -D @typescript-eslint/eslint-plugin@4.33.0 @typescript-eslint/parser@4.33.0
 ```
 
-Add this lines in your `package.json` file:
+Add `aristek/typescript` to eslint config in your `package.json` file. This will be looks like:
 
 ```json
 "eslintConfig": {
-  "extends": "aristek/base"
+  "extends": [
+    "aristek",
+    "aristek/typescript"
+  ]
 }
 ```
 
-> This preset should be used for JavaScript only projects.
+> This preset can also be used for mixed codebases. But if you have specified allowJs false in tsconfig you can remove @babel/eslint-parser from your dependencies.
 
 ### GraphQL
 
-Install the correct versions of each dependency via npm:
+Install the correct versions of each dependency to add GraphQL support to your project via npm:
 
 ```bash
 npm i -E -D @graphql-eslint/eslint-plugin@2
@@ -80,18 +85,21 @@ npm i -E -D @graphql-eslint/eslint-plugin@2
 Or via yarn:
 
 ```bash
-yarn add -E -D @graphql-eslint/eslint-plugin@2.2.0
+yarn add -E -D @graphql-eslint/eslint-plugin@2.4.1
 ```
 
-Add this lines in your `package.json` file:
+Add `aristek/graphql` to eslint config in your `package.json` file. This will be looks like:
 
 ```json
 "eslintConfig": {
-  "extends": "aristek/graphql"
+  "extends": [
+    "aristek",
+    "aristek/graphql"
+  ]
 }
 ```
 
-## create-react-app
+### create-react-app
 
 In case you are trying to use our config with create-react-app, we recommend you to use [@craco/craco](https://www.npmjs.com/package/@craco/craco) to override default config.
 To do this you should add the following lines in your `craco.config.js` file:
@@ -110,6 +118,234 @@ module.exports = {
 ## Rules
 
 Here we document only rules that were changed compared to our [configs and plugins](#features).
+
+### Basic
+
+#### linebreak-style
+
+Disable linebreak style to prevent conflicts different environments.
+
+```
+"linebreak-style": "off"
+```
+
+#### lines-between-class-members
+
+Keep line between class members except of simple class properties e.g. class variables or component state.
+
+```
+"lines-between-class-members": ["error", "always", { exceptAfterSingleLine: true }]
+```
+
+#### no-unused-expressions
+
+There is no difference except `allowTernary` option. We prefer to use `if shorthands` for logic operations.
+Example: condition ? method1() : method2().
+
+```
+"no-unused-expressions": ["error", { allowTernary: true }]
+```
+
+#### no-empty
+
+Forbid empty if-else blocks, but allow empty `try {...} catch(e) {}`.
+
+```
+"no-empty": ["error", { allowEmptyCatch: true }]
+```
+
+#### no-param-reassign
+
+Extend airbnb rule to remove eslint warning for immer usage also.
+
+```
+"no-param-reassign": [
+  "error",
+  {
+    props: true,
+    ignorePropertyModificationsForRegex: [
+      "acc", // for reduce accumulators
+      "accumulator", // for reduce accumulators
+      "e", // for e.returnvalue
+      "ctx", // for Koa routing
+      "context", // for Koa routing
+      "req", // for Express requests
+      "request", // for Express requests
+      "res", // for Express responses
+      "response", // for Express responses
+      "$scope", // for Angular 1 scopes
+      "staticContext", // for ReactRouter context
+      "draft", // for immer
+    ],
+  },
+]
+```
+
+#### radix
+
+Disallows providing the 10 radix by default.
+
+```
+radix: ["error", "as-needed"]
+```
+
+#### curly
+
+Forces using all curly braces.
+
+```
+curly: "error"
+```
+
+#### global-require
+
+'require' is used only in config files (e.g. rollup).
+
+```
+"global-require": "off"
+```
+
+#### import/prefer-default-export
+
+Stylistic preference.
+
+```
+"import/prefer-default-export": "off"
+```
+
+#### import/no-extraneous-dependencies
+
+Allow dev dependencies import for config, test, storybook files.
+Also ignore `src/setupTests` file for jest setup.
+
+```
+"import/no-extraneous-dependencies": [
+  "error",
+  {
+    devDependencies: [
+      "**/*.config.*",
+      "**/*.test.*",
+      "**/*.stories.*",
+      "src/setupTests.*"
+    ]
+  }
+]
+```
+
+#### import/extensions
+
+No need to specify extensions if files are named correctly.
+
+```
+"import/extensions": [
+  "error",
+  "ignorePackages",
+  {
+    js: "never",
+    jsx: "never",
+    ts: "never",
+    tsx: "never",
+    mjs: "never"
+  }
+]
+```
+
+#### jsx-a11y/label-has-for
+
+This rule was deprecated in v6.1.0. It will no longer be maintained. Use label-has-associated-control instead.
+
+```
+"jsx-a11y/label-has-for": "off"
+```
+
+#### jsx-a11y/img-redundant-alt
+
+Disable because of false positive cases with dynamic alt text.
+
+```
+"jsx-a11y/img-redundant-alt": "off"
+```
+
+#### jsx-a11y/label-has-associated-control
+
+We must provide this rule with `htmlFor` attribute (by default) because this one was broken in airbnb config by `labelAttributes: []`.
+
+```
+"jsx-a11y/label-has-associated-control": ["error", { labelAttributes: ["htmlFor"] }]
+```
+
+#### react/require-default-props
+
+'defaultProps' on function components is deprecated by React (https://github.com/facebook/react/pull/16210).
+
+```
+"react/require-default-props": [
+  "error",
+  { ignoreFunctionalComponents: true }
+]
+```
+
+#### react/jsx-one-expression-per-line
+
+Disable this rule because it causes an error with special html chars on some environments (e.g. Windows).
+
+```
+"react/jsx-one-expression-per-line": "off"
+```
+
+#### react/state-in-constructor
+
+We use both variants depending on each case.
+
+```
+"react/state-in-constructor": "off",
+```
+
+#### react/destructuring-assignment
+
+Use destructing only in render for `props` and `state`. For handlers we use destruction only if needed.
+
+```
+"react/destructuring-assignment": "off"
+```
+
+#### react/jsx-filename-extension
+
+Allow both `.js` and `.jsx` extensions.
+
+```
+"react/jsx-filename-extension": ["error", { extensions: [".js", ".jsx"] }]
+```
+
+#### react/forbid-prop-types
+
+There is no need to use alternatives everywhere like `shape`.
+Sometimes we just need to know that this is an array in container for example.
+We do not do any manipulations with array props and just pass it into the component.
+
+```
+"react/forbid-prop-types": "off"
+```
+
+#### react/jsx-props-no-spreading
+
+Disable for our own risk without any grounding for a while.
+It's also unnecessary for TypeScript users because all props are checking via types.
+
+```
+"react/jsx-props-no-spreading": "off"
+```
+
+#### @typescript-eslint/explicit-function-return-type
+
+Disable for 'js' files in case of mixed configs as described in docs.
+https://github.com/typescript-eslint/typescript-eslint/issues/851
+
+```
+"@typescript-eslint/explicit-function-return-type": "off"
+```
+
+> Only if `aristek/typescript` config was included.
 
 ### TypeScript
 
@@ -246,237 +482,11 @@ Nothing bad in type parameter shadow.
 ],
 ```
 
-### JavaScript
-
-#### linebreak-style
-
-Disable linebreak style to prevent conflicts different environments.
-
-```
-"linebreak-style": "off"
-```
-
-#### lines-between-class-members
-
-Keep line between class members except of simple class properties e.g. class variables or component state.
-
-```
-"lines-between-class-members": ["error", "always", { exceptAfterSingleLine: true }]
-```
-
-#### no-unused-expressions
-
-There is no difference except `allowTernary` option. We prefer to use `if shorthands` for logic operations.
-Example: condition ? method1() : method2().
-
-```
-"no-unused-expressions": ["error", { allowTernary: true }]
-```
-
-#### no-empty
-
-Forbid empty if-else blocks, but allow empty `try {...} catch(e) {}`.
-
-```
-"no-empty": ["error", { allowEmptyCatch: true }]
-```
-
-#### no-param-reassign
-
-Extend airbnb rule to remove eslint warning for immer usage also.
-
-```
-"no-param-reassign": [
-  "error",
-  {
-    props: true,
-    ignorePropertyModificationsForRegex: [
-      "acc", // for reduce accumulators
-      "accumulator", // for reduce accumulators
-      "e", // for e.returnvalue
-      "ctx", // for Koa routing
-      "context", // for Koa routing
-      "req", // for Express requests
-      "request", // for Express requests
-      "res", // for Express responses
-      "response", // for Express responses
-      "$scope", // for Angular 1 scopes
-      "staticContext", // for ReactRouter context
-      "draft", // for immer
-    ],
-  },
-]
-```
-
-#### radix
-
-Disallows providing the 10 radix by default.
-
-```
-radix: ["error", "as-needed"]
-```
-
-#### curly
-
-Forces using all curly braces.
-
-```
-curly: "error"
-```
-
-#### global-require
-
-'require' is used only in config files (e.g. rollup).
-
-```
-"global-require": "off"
-```
-
-#### react/require-default-props
-
-'defaultProps' on function components is deprecated by React (https://github.com/facebook/react/pull/16210).
-
-```
-"react/require-default-props": [
-  "error",
-  { ignoreFunctionalComponents: true }
-]
-```
-
-#### react/jsx-one-expression-per-line
-
-Disable this rule because it causes an error with special html chars on some environments (e.g. Windows).
-
-```
-"react/jsx-one-expression-per-line": "off"
-```
-
-#### react/state-in-constructor
-
-We use both variants depending on each case.
-
-```
-"react/state-in-constructor": "off",
-```
-
-#### react/destructuring-assignment
-
-Use destructing only in render for `props` and `state`. For handlers we use destruction only if needed.
-
-```
-"react/destructuring-assignment": "off"
-```
-
-#### react/jsx-filename-extension
-
-Allow both `.js` and `.jsx` extensions.
-
-```
-"react/jsx-filename-extension": ["error", { extensions: [".js", ".jsx"] }]
-```
-
-#### react/forbid-prop-types
-
-There is no need to use alternatives everywhere like `shape`.
-Sometimes we just need to know that this is an array in container for example.
-We do not do any manipulations with array props and just pass it into the component.
-
-```
-"react/forbid-prop-types": "off"
-```
-
-#### react/jsx-props-no-spreading
-
-Disable for our own risk without any grounding for a while.
-It's also unnecessary for TypeScript users because all props are checking via types.
-
-```
-"react/jsx-props-no-spreading": "off"
-```
-
-#### import/prefer-default-export
-
-Stylistic preference.
-
-```
-"import/prefer-default-export": "off"
-```
-
-#### import/no-extraneous-dependencies
-
-Allow dev dependencies import for config, test, storybook files.
-Also ignore `src/setupTests` file for jest setup.
-
-```
-"import/no-extraneous-dependencies": [
-  "error",
-  {
-    devDependencies: [
-      "**/*.config.*",
-      "**/*.test.*",
-      "**/*.stories.*",
-      "src/setupTests.*"
-    ]
-  }
-]
-```
-
-#### import/extensions
-
-No need to specify extensions if files are named correctly.
-
-```
-"import/extensions": [
-  "error",
-  "ignorePackages",
-  {
-    js: "never",
-    jsx: "never",
-    ts: "never",
-    tsx: "never",
-    mjs: "never"
-  }
-]
-```
-
-#### jsx-a11y/label-has-for
-
-This rule was deprecated in v6.1.0. It will no longer be maintained. Use label-has-associated-control instead.
-
-```
-"jsx-a11y/label-has-for": "off"
-```
-
-#### jsx-a11y/img-redundant-alt
-
-Disable because of false positive cases with dynamic alt text.
-
-```
-"jsx-a11y/img-redundant-alt": "off"
-```
-
-#### jsx-a11y/label-has-associated-control
-
-We must provide this rule with `htmlFor` attribute (by default) because this one was broken in airbnb config by `labelAttributes: []`.
-
-```
-"jsx-a11y/label-has-associated-control": ["error", { labelAttributes: ["htmlFor"] }]
-```
-
-#### @typescript-eslint/explicit-function-return-type
-
-Disable for 'js' files in case of mixed configs as described in docs.
-https://github.com/typescript-eslint/typescript-eslint/issues/851
-
-```
-"@typescript-eslint/explicit-function-return-type": "off"
-```
-
 ### GraphQL
 
 #### @graphql-eslint/avoid-duplicate-fields
 
-Avoid querying same field multiple times within same operation. 
+Avoid querying same field multiple times within same operation.
 
 ```
 "@graphql-eslint/avoid-duplicate-fields": "error"
