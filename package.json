@@ -8,6 +8,7 @@
   "files": [
     "graphql.js",
     "index.js",
+    "prettier.js",
     "typescript.js"
   ],
   "peerDependencies": {
