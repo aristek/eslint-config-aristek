@@ -6,6 +6,7 @@
   "license": "MIT",
   "main": "index.js",
   "files": [
+    "css-modules.js",
     "graphql.js",
     "index.js",
     "prettier.js",
@@ -19,6 +20,7 @@
     "eslint": "^7.32.0",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-css-modules": "^2.11.0",
     "eslint-plugin-import": "^2.25.3",
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-only-warn": "^1.0.3",
