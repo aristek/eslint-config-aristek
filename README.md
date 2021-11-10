@@ -15,11 +15,12 @@ ESLint config based on team guideline and experience for React projects.
 ## Features
 
 - Based on [airbnb code style](https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb).
-- Uses [react](https://github.com/yannickcr/eslint-plugin-react), [react-hooks](https://github.com/facebook/react/tree/master/packages/eslint-plugin-react-hooks), [import](https://github.com/benmosher/eslint-plugin-import), [jsx-a11y](https://github.com/evcohen/eslint-plugin-jsx-a11y) and [only-warn](https://github.com/bfanger/eslint-plugin-only-warn) plugins.
-- TypeScript is supported basing on [@typescript-eslint/parser](https://github.com/typescript-eslint/typescript-eslint/tree/master/packages/parser) and [@typescript-eslint/eslint-plugin](https://github.com/typescript-eslint/typescript-eslint/tree/master/packages/eslint-plugin).
-- GraphQL is supported basing on [@graphql-eslint/eslint-plugin](https://github.com/dotansimha/graphql-eslint).
-- Absolute imports friendly for node_modules and src.
-- Compatible with prettier.
+- Basic configuration for JavaScript and React via [import](https://github.com/benmosher/eslint-plugin-import), [jsx-a11y](https://github.com/evcohen/eslint-plugin-jsx-a11y), [only-warn](https://github.com/bfanger/eslint-plugin-only-warn), [react](https://github.com/yannickcr/eslint-plugin-react) and [react-hooks](https://github.com/facebook/react/tree/master/packages/eslint-plugin-react-hooks) plugins.
+- TypeScript support via [@typescript-eslint/parser](https://github.com/typescript-eslint/typescript-eslint/tree/master/packages/parser) and [@typescript-eslint/eslint-plugin](https://github.com/typescript-eslint/typescript-eslint/tree/master/packages/eslint-plugin).
+- GraphQL support via [@graphql-eslint/eslint-plugin](https://github.com/dotansimha/graphql-eslint).
+- CSS Modules support via [eslint-plugin-css-modules](https://github.com/atfzl/eslint-plugin-css-modules).
+- Prettier support via [eslint-config-prettier](https://github.com/prettier/eslint-config-prettier).
+- Absolute imports friendly for `node_modules` and `src`.
 
 ## Usage
 
@@ -176,6 +177,30 @@ Here we document only rules that were changed compared to our [configs and plugi
 
 ### Basic
 
+#### radix
+
+Disallows providing the 10 radix by default.
+
+```
+radix: ["error", "as-needed"]
+```
+
+#### curly
+
+Forces using all curly braces.
+
+```
+curly: "error"
+```
+
+#### global-require
+
+'require' is used only in config files (e.g. rollup).
+
+```
+"global-require": "off"
+```
+
 #### linebreak-style
 
 Disable linebreak style to prevent conflicts different environments.
@@ -236,28 +261,12 @@ Extend airbnb rule to remove eslint warning for immer usage also.
 ]
 ```
 
-#### radix
+#### no-negated-condition
 
-Disallows providing the 10 radix by default.
-
-```
-radix: ["error", "as-needed"]
-```
-
-#### curly
-
-Forces using all curly braces.
+Negated conditions are more difficult to understand.
 
 ```
-curly: "error"
-```
-
-#### global-require
-
-'require' is used only in config files (e.g. rollup).
-
-```
-"global-require": "off"
+"no-negated-condition": "error"
 ```
 
 #### import/prefer-default-export
