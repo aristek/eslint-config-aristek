@@ -14,6 +14,8 @@ module.exports = {
         "@graphql-eslint/no-deprecated": "error",
         // Force unique operation names usage. Duplicate names will cause @graphql-codegen tool to crash.
         "@graphql-eslint/unique-operation-name": "error",
+        // Specify id in queries when available to avoid possible issues with caching data.
+        "@graphql-eslint/require-id-when-available": "error",
       },
     },
   ],
