@@ -28,13 +28,13 @@ There are several possible presets that you can setup using our config.
 Let's start from installing core dependencies with correct versions of each dependency via npm:
 
 ```bash
-npm i -E -D eslint@7 eslint-config-aristek@5 eslint-config-airbnb@18 eslint-config-prettier@8 eslint-plugin-import@2 eslint-plugin-jsx-a11y@6 eslint-plugin-only-warn@1 eslint-plugin-react@7 eslint-plugin-react-hooks@4 @babel/eslint-parser@7
+npm i -E -D @babel/eslint-parser@7 eslint@7 eslint-config-airbnb@18 eslint-config-aristek@5 eslint-plugin-import@2 eslint-plugin-jsx-a11y@6 eslint-plugin-only-warn@1 eslint-plugin-react@7 eslint-plugin-react-hooks@4
 ```
 
 Or via yarn:
 
 ```bash
-yarn add -E -D eslint@7.32.0 eslint-config-aristek@5.4.1 eslint-config-airbnb@18.2.1 eslint-config-prettier@8.3.0 eslint-plugin-import@2.25.3 eslint-plugin-jsx-a11y@6.4.1 eslint-plugin-only-warn@1.0.3 eslint-plugin-react@7.26.1 eslint-plugin-react-hooks@4.3.0 @babel/eslint-parser@7.16.3
+yarn add -E -D @babel/eslint-parser@7.16.3 eslint@7.32.0 eslint-config-airbnb@18.2.1 eslint-config-aristek@5.4.1 eslint-plugin-import@2.25.3 eslint-plugin-jsx-a11y@6.4.1 eslint-plugin-only-warn@1.0.3 eslint-plugin-react@7.26.1 eslint-plugin-react-hooks@4.3.0
 ```
 
 Then add this lines in your `package.json` file:
@@ -98,6 +98,34 @@ Add `aristek/graphql` to eslint config in your `package.json` file. This will be
   ]
 }
 ```
+
+### Prettier
+
+Install the correct versions of each dependency to add Prettier support to your project via npm:
+
+```bash
+npm i -E -D eslint-config-prettier@8
+```
+
+Or via yarn:
+
+```bash
+yarn add -E -D eslint-config-prettier@8.3.0
+```
+
+Add `aristek/prettier` to eslint config in your `package.json` file. This will be looks like:
+
+```json
+"eslintConfig": {
+  "extends": [
+    "aristek",
+    "aristek/typescript"
+    "aristek/prettier" // <- Must be the last extend in config.
+  ]
+}
+```
+
+> Pay attention that prettier extend must be the last in your eslint configuration!
 
 ### create-react-app
 
