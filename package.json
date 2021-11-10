@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-aristek",
-  "version": "5.4.1",
+  "version": "6.0.0",
   "description": "ESLint config based on team guideline and experience.",
   "repository": "https://github.com/aristek/eslint-config-aristek",
   "license": "MIT",
