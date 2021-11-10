@@ -83,6 +83,11 @@ module.exports = {
             ignoreFunctionTypeParameterNameValueShadow: true,
           },
         ],
+        // We prefer to use interface in most cases.
+        "@typescript-eslint/consistent-type-definitions": [
+          "error",
+          "interface",
+        ],
       },
     },
   ],
