@@ -83,6 +83,35 @@ module.exports = {
       "ignorePackages",
       { js: "never", jsx: "never", ts: "never", tsx: "never", mjs: "never" },
     ],
+    // It's important to stick to readable imports so this rule is must have here.
+    "import/order": [
+      "error",
+      {
+        groups: [
+          "builtin",
+          "external",
+          "internal",
+          "parent",
+          "sibling",
+          "index",
+        ],
+        pathGroups: [
+          {
+            pattern: "react",
+            group: "external",
+            position: "before",
+          },
+          {
+            pattern: "./*.{css,scss}",
+            group: "index",
+            position: "after",
+          },
+        ],
+        pathGroupsExcludedImportTypes: ["react"],
+        alphabetize: { order: "asc", caseInsensitive: true },
+        "newlines-between": "never",
+      },
+    ],
     // This rule was deprecated in v6.1.0. It will no longer be maintained.
     // Use label-has-associated-control instead.
     "jsx-a11y/label-has-for": "off",
